@@ -1,4 +1,7 @@
-# Ignore CSS and JS from GitHub language stats
-*.css linguist-vendored
+# Mark non-PHP code as vendored so it doesn't count in language stats
+*.ts linguist-vendored
+*.tsx linguist-vendored
 *.js linguist-vendored
-*.map linguist-vendored
+*.scss linguist-vendored
+*.css linguist-vendored
+*.html linguist-vendored
