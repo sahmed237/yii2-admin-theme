@@ -1,0 +1,179 @@
+/*
+ * Custom CSS for Yii2 Admin Theme
+ */
+
+/*
+ * Fix for Choices.js icon rendering.
+ * Ensures the icon previews in the dropdown have the correct size,
+ * alignment, and are not clipped.
+ */
+ .choices__list--dropdown .choices__item--choice .d-flex {
+    align-items: center;
+}
+
+.choices__list--dropdown .choices__item--choice i {
+    /* Give the icon a fixed width to prevent clipping */
+    width: 30px; 
+    /* Ensure the icon is vertically centered */
+    line-height: 1;
+    /* The font-family will now be correctly applied by the icon library's own CSS */
+}
+
+.choices__inner .choices__item i {
+    /* Styles for the selected icon shown in the input */
+    vertical-align: middle;
+}
+
+/*
+ * Use a 'grab' cursor for the drag handle to improve UX.
+ */
+.drag-handle {
+    cursor: grab;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.3; }
+    100% { opacity: 1; }
+}
+
+.blinking {
+    animation: blink 1s infinite;
+    color: var(--vz-info) !important;
+}
+
+/*
+*Overider styling app.css to use dynamic styling
+*/
+.card-radio .form-check-input:checked + .form-check-label {
+    border: 2px solid var(--vz-primary) !important;
+
+
+}
+.card-radio .form-check-input:checked + .form-check-label:before {
+    color: var(--vz-primary) !important;
+}
+
+.theme-card-label {
+    border: 2px solid transparent;
+    transition: border 0.3s ease;
+    position: relative;
+}
+
+.form-check-input:checked + .theme-card-label {
+    border-color: var(--vz-primary) !important; /* primary border */
+}
+
+.form-check-input:checked + .theme-card-label::after {
+    content: "\eb80";
+    font-family: 'remixicon';
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    font-size: 16px;
+    color:var(--vz-primary) ;
+}
+
+.img-switch .form-check-input:checked + .theme-card-label::after {
+    content: "\eb80";
+    font-family: remixicon;
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    -webkit-transform: translateY(-50%) translateX(-50%);
+    transform: translateY(-50%) translateX(-50%);
+    font-size: 18px;
+    color: #fff;
+}
+
+/*[data-bs-target="#collapseSidebarGradient"].active {*/
+/*    border-color: var(--vz-primary) !important;*/
+/*}*/
+/*[data-bs-target="#collapseSidebarGradient"].active::before {*/
+/*    content: "\eb80";*/
+/*    font-family: remixicon;*/
+/*    position: absolute;*/
+/*    top: 2px;*/
+/*    right: 6px;*/
+/*    font-size: 16px;*/
+/*    color:var(--vz-primary)*/
+/*}*/
+
+/*
+ * Hide the default theme icon (dash/circle) when a custom icon is present.
+ */
+.nav-link::before {
+    display: none !important;
+}
+
+/*
+ * Specificity override: Hide the default dash for nested menu items
+ * when a custom icon is present.
+ */
+/*.navbar-menu .navbar-nav .nav-sm .nav-link.has-icon::before {*/
+/*    content: none !important;*/
+/*}*/
+
+/*
+ * Modern (Pill Style) Sidebar UI
+ * Applies when data-sidebar-ui="modern" is set on the <html> tag.
+ */
+[data-sidebar-ui="modern"] .navbar-nav .nav-link {
+    border-radius: 0.4rem !important;
+    margin: 0.2rem 0.2rem !important;
+}
+
+[data-sidebar-ui="modern"] .navbar-nav .nav-link i {
+    background-color: #fff;
+    color: var(--vz-primary);
+    margin-right: 15px;
+    border-radius: 12px;
+    padding: 0.3rem;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: -3px 4px 23px rgba(0, 0, 0, 0.1);
+    width: 2rem;
+    height: 2rem;
+}
+
+/* Exclude toggle links (i.e., collapsible menu headers) */
+[data-sidebar-ui="modern"] .navbar-nav .nav-link.menu-link.has-icon[data-bs-toggle="collapse"] {
+    margin:0rem 0.2rem !important;
+}
+
+
+/* Style for the active/hovered link */
+[data-sidebar-ui="modern"] .navbar-nav .nav-link.active,
+[data-sidebar-ui="modern"] .navbar-nav .nav-link:hover {
+    background-color: var(--vz-primary) !important;
+    color: #fff !important;
+}
+
+
+
+/*!* Adjust sub-menu padding *!*/
+[data-sidebar-ui="modern"].navbar-menu .navbar-nav .nav-sm .nav-link.has-icon {
+    padding: .55rem .5rem !important;
+}
+/*[data-sidebar-size="md"] .navbar-nav .nav-link i{*/
+/*    background-color: red !important;*/
+/*    color: var(--vz-primary);*/
+/*    margin-right: 15px;*/
+/*    border-radius: 12px;*/
+/*    padding: 0.3rem;*/
+/*    font-size: 1rem;*/
+/*    display: inline-flex;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*    box-shadow: -3px 4px 23px rgba(0, 0, 0, 0.1);*/
+/*    width: 2rem;*/
+/*    height: 2rem;*/
+/*}*/
+
+[data-sidebar-ui="modern"] .navbar-nav .nav-link.menu-link.has-icon[data-bs-toggle="collapse"]:hover i,
+[data-sidebar-ui="modern"] .navbar-nav .nav-link.menu-link.has-icon[data-bs-toggle="collapse"].active i {
+    color: var(--vz-primary) !important;
+}
+

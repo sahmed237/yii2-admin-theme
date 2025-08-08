@@ -1,0 +1,26 @@
+{
+    "name": "sahmed237/yii2-admin-theme",
+    "description": "An admin theme for Yii2 with configurable options.",
+    "type": "yii2-extension",
+    "keywords": ["yii2", "extension", "admin", "theme"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "S. Ahmed",
+            "email": "sadiqahmed237@gmail.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "~2.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "sahmed237\\yii2admintheme\\": "src"
+        }
+    },
+    "extra": {
+        "asset-installer-paths": {
+            "npm-asset-library": "vendor/npm"
+        }
+    }
+} 
