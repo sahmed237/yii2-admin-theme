@@ -23,13 +23,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```bash
-composer require sahmed237/yii2admintheme 0.1
+composer require sahmed237/yii2-admin-theme:^1.0
 ```
 
 or add
 
 ```
-"sahmed237/yii2-user": "0.1"
+"sahmed237/yii2-user": "^1.0"
 ```
 
 to the require section of your `composer.json` file.

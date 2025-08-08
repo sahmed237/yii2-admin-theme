@@ -6,8 +6,12 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "S. Ahmed",
+            "name": "Sadiq Ahmed Bello",
             "email": "sadiqahmed237@gmail.com"
+        },
+        {
+            "name": "Usman Ahmed",
+            "email": "usmatee@gmail.com"
         }
     ],
     "require": {
@@ -18,9 +22,7 @@
             "sahmed237\\yii2admintheme\\": "src"
         }
     },
-    "extra": {
-        "asset-installer-paths": {
-            "npm-asset-library": "vendor/npm"
-        }
-    }
+    "minimum-stability": "stable",
+    "prefer-stable": true
+
 } 
