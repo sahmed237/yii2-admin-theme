@@ -1,0 +1,4 @@
+# Ignore CSS and JS from GitHub language stats
+*.css linguist-vendored
+*.js linguist-vendored
+*.map linguist-vendored
