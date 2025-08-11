@@ -110,9 +110,9 @@ class NotificationDropdownWidget extends Widget
 
     protected function registerAssets($notifications)
     {
-        $readUrl = $this->markAsReadUrl ?: Url::to([Yii::$app->params['adminThemeModuleName'].'/'.$this->notificationMarkReadRoute  ?? 'yii2admintheme/notificaton/mark-read']);
+        $readUrl = $this->markAsReadUrl ?: Url::to(['/' . Yii::$app->params['adminThemeModuleName'] . '/' . $this->notificationMarkReadRoute  ?? 'yii2admintheme/notificaton/mark-read']);
 
-        $latestUrl = $this->fetchLatestUrl ?: Url::to([Yii::$app->params['adminThemeModuleName'].'/'.$this->notificationFetchLatestRoute ?? '/yii2admintheme/notification/fetch-latest']);
+        $latestUrl = $this->fetchLatestUrl ?: Url::to(['/' . Yii::$app->params['adminThemeModuleName'] . '/' . $this->notificationFetchLatestRoute ?? '/yii2admintheme/notification/fetch-latest']);
 
         $view = $this->getView();
         AdminThemeAsset::register($view);
