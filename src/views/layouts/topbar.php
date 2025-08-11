@@ -26,7 +26,7 @@ $logoLightLg = $settings['logo_light_lg']->value ?? '' ;
 
                     <a href="index" class="logo logo-light">
                         <span class="logo-sm">
-                            <img src="<?= $logoLighSm ?>" alt="Logo Ligh Sm" height="22">
+                            <img src="<?= $logoLightSm ?>" alt="Logo Ligh Sm" height="22">
                         </span>
                         <span class="logo-lg">
                             <img src="<?= $logoLightLg ?>" alt="Logo Ligh Lg" height="17">
