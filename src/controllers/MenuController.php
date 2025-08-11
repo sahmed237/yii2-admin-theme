@@ -134,7 +134,17 @@ class MenuController extends Controller
         }
     }
 
-
+    public function actionAddMenuItem($parentId = null, $index = 0)
+    {
+        $model = new AdminMenu(['parent_id' => $parentId]);
+        return $this->renderAjax('_menu_item', [
+            'model' => $model,
+            'index' => $index,
+            'parentId' => $parentId,
+            'isChild' => $parentId !== null,
+            'iconList' => IconHelper::getIconList(),
+        ]);
+    }
 
     protected function findModel($id)
     {
