@@ -45,7 +45,7 @@ Add the module and view theme to your application config (`config/web.php` or `c
 
 ```php
 'modules' => [
-    'admintheme' => [
+    'yii2admintheme' => [
       'class' => \sahmed237\yii2admintheme\Module::class,
       'permissionRule' => 'your-permision-rule'
     ],
