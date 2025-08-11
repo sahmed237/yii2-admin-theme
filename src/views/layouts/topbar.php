@@ -3,6 +3,11 @@ use yii\helpers\Html;
 use sahmed237\yii2admintheme\widgets\SearchWidget;
 use sahmed237\yii2admintheme\widgets\NotificationDropdownWidget;
 use sahmed237\yii2admintheme\widgets\UserDropdownWidget;
+
+$logoDarkSm = $settings['logo_dark_sm']->value ?? '' ;
+$logoDarkLg = $settings['logo_dark_lg']->value ?? '' ;
+$logoLightSm = $settings['logo_light_sm']->value ?? '' ;
+$logoLightLg = $settings['logo_light_lg']->value ?? '' ;
 ?>
 <header id="page-topbar">
     <div class="layout-width">
@@ -12,19 +17,19 @@ use sahmed237\yii2admintheme\widgets\UserDropdownWidget;
                 <div class="navbar-brand-box horizontal-logo">
                     <a href="index" class="logo logo-dark">
                         <span class="logo-sm">
-                            <img src="<?= $settings['logo_dark_sm']->value ?>" alt="Logo dark Sm" height="22">
+                            <img src="<?= $logoDarkSm ?>" alt="Logo dark Sm" height="22">
                         </span>
                         <span class="logo-lg">
-                            <img src="<?= $settings['logo_dark_lg']->value ?>" alt="Logo Dark Lg" height="17">
+                            <img src="<?= $logoDarkLg ?>" alt="Logo Dark Lg" height="17">
                         </span>
                     </a>
 
                     <a href="index" class="logo logo-light">
                         <span class="logo-sm">
-                            <img src="<?= $settings['logo_light_sm']->value ?>" alt="Logo Ligh Sm" height="22">
+                            <img src="<?= $logoLighSm ?>" alt="Logo Ligh Sm" height="22">
                         </span>
                         <span class="logo-lg">
-                            <img src="<?= $settings['logo_light_lg']->value ?>" alt="Logo Ligh Lg" height="17">
+                            <img src="<?= $logoLightLg ?>" alt="Logo Ligh Lg" height="17">
                         </span>
                     </a>
                 </div>
