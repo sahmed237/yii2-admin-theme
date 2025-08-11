@@ -18,6 +18,9 @@ $this->registerCsrfMetaTags();
 $settings = AdminThemeSetting::find()
     ->indexBy('key') // Make it an associative array by 'key'
     ->all();
+
+$fontFamily = $settings['font_family']->value ?? '';
+$fontSize = $settings['font_size']->value ?? '';
 ?>
 
 <?php $this->beginPage() ?>
@@ -29,7 +32,7 @@ $settings = AdminThemeSetting::find()
     <?= ThemeHelper::getDynamicCss() ?>
 </head>
 
-<body style="font-family: <?= $settings['font_family']->value ?> ; font-size:<?= $settings['font_size']->value ?> ;">
+<body style="font-family: <?= $fontFamily ?> ; font-size:<?= $fontSize ?> ;">
 <?php $this->beginBody() ?>
 <!-- Begin page -->
 <div id="layout-wrapper">
