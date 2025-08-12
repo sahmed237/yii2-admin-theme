@@ -222,7 +222,8 @@ if (Yii::$app->authManager !== null) {
                 const menuData = serializeMenu(menuContainer);
                 const form = document.getElementById('menu-form');
                 const url = form.action;
-                const csrfToken = form.querySelector('[name="_csrf-frontend"]').value;
+                const csrfParam = yii.getCsrfParam();
+                const csrfToken = form.querySelector(`[name="${csrfParam}"]`).value;
                 const saveButton = e.target;
                 const originalButtonText = saveButton.innerHTML;
                 saveButton.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Saving...';
