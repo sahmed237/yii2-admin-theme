@@ -437,7 +437,7 @@ It can be used across your application to send alerts, reminders, or any custom 
 ```
 'components' => [
     'notification' => [
-        'class' => app\components\NotificationComponent::class,
+        'class' => \sahmed237\yii2admintheme\components\NotificationComponent::class,
     ],
 ],
 ```

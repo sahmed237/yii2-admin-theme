@@ -115,16 +115,26 @@ $idPrefix = 'adminmenu-'.str_replace(['[', ']'], '-', trim($inputPath, '[]'));
                 <div class="form-group">
                     <?= Html::activeLabel($model, 'rbac_permission', ['class' => 'control-label']) ?>
                     <?php
-                    $permissions = [];
-                    if (Yii::$app->authManager !== null) {
-                        $permissions = ArrayHelper::map(Yii::$app->authManager->getPermissions(), 'name', 'name');
+                    $auth = Yii::$app->authManager;
+                    $items = [];
+
+                    if ($auth !== null) {
+                        $permissions = $auth->getPermissions();
+                        $roles = $auth->getRoles();
+
+                        // Merge and label them
+                        $merged = array_merge($permissions, $roles);
+
+                        // Convert to dropdown list format
+                        $items = ArrayHelper::map($merged, 'name', 'name');
                     }
-                    echo Html::activeDropDownList($model, 'rbac_permission', $permissions, [
+
+                    echo Html::activeDropDownList($model, 'rbac_permission', $items, [
                         'name' => "AdminMenu{$inputPath}[rbac_permission]",
                         'id' => "{$idPrefix}-rbac_permission",
                         'class' => 'form-control',
-                        'prompt' => Yii::$app->authManager ? '-- Select Permission --' : 'RBAC Not Configured',
-                        'disabled' => Yii::$app->authManager === null,
+                        'prompt' => $auth ? '-- Select Permission or Role --' : 'RBAC Not Configured',
+                        'disabled' => $auth === null,
                         'value' => $model->rbac_permission
                     ]);
                     ?>
